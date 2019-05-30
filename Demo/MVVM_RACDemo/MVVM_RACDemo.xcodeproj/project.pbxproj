@@ -21,6 +21,7 @@
 		85E0D544229FCAA600494796 /* JRUseRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D543229FCAA600494796 /* JRUseRACViewController.m */; };
 		85E0D556229FDE8600494796 /* JRAppRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D555229FDE8600494796 /* JRAppRACViewController.m */; };
 		A43F1BDD1C4B06479C90E225 /* libPods-MVVM_RACDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8F9763DA6F41F1BC6AC00 /* libPods-MVVM_RACDemo.a */; };
+		F95AB54F22A028DA0051C572 /* JRUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F95AB54E22A028DA0051C572 /* JRUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		85E0D554229FDE8600494796 /* JRAppRACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRAppRACViewController.h; sourceTree = "<group>"; };
 		85E0D555229FDE8600494796 /* JRAppRACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRAppRACViewController.m; sourceTree = "<group>"; };
 		AEE8F9763DA6F41F1BC6AC00 /* libPods-MVVM_RACDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVM_RACDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95AB54D22A028DA0051C572 /* JRUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRUtility.h; sourceTree = "<group>"; };
+		F95AB54E22A028DA0051C572 /* JRUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRUtility.m; sourceTree = "<group>"; };
 		FFC6A12C9C764A5772A8CD25 /* Pods-MVVM_RACDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_RACDemo.debug.xcconfig"; path = "Target Support Files/Pods-MVVM_RACDemo/Pods-MVVM_RACDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +145,7 @@
 		85E0D4F8229FC0B900494796 /* MVVM_RACDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F95AB54B22A028B60051C572 /* Service */,
 				85E0D538229FC6F100494796 /* Base */,
 				85E0D537229FC6E300494796 /* Bussiness */,
 				85E0D52F229FC54800494796 /* Extends */,
@@ -255,6 +259,23 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F95AB54B22A028B60051C572 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F95AB54C22A028C80051C572 /* Tools */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F95AB54C22A028C80051C572 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F95AB54D22A028DA0051C572 /* JRUtility.h */,
+				F95AB54E22A028DA0051C572 /* JRUtility.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +436,7 @@
 			files = (
 				85E0D544229FCAA600494796 /* JRUseRACViewController.m in Sources */,
 				85E0D535229FC5AE00494796 /* UIView+Layout.m in Sources */,
+				F95AB54F22A028DA0051C572 /* JRUtility.m in Sources */,
 				85E0D53F229FC7C600494796 /* JRUIButton.m in Sources */,
 				85E0D53C229FC71000494796 /* JRBaseViewController.m in Sources */,
 				85E0D4FE229FC0B900494796 /* ViewController.m in Sources */,

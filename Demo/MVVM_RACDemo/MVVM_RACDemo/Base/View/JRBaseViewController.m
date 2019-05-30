@@ -22,7 +22,7 @@
 
 - (JRUIButton *)createButtonWithTitle:(NSString *)title tag:(NSInteger)tag {
     JRUIButton *button = [JRUIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(100.0, 60 + tag * 80.0, 160.0, 60.0);
+    button.frame = CGRectMake(100.0, 100 + tag * 80.0, 160.0, 60.0);
     button.backgroundColor = [UIColor lightGrayColor];
     [button setTitle:title forState:UIControlStateNormal];
     button.tag = tag;

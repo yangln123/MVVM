@@ -12,15 +12,18 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-
+//third
+#import "ReactiveObjC.h"
 #import "Masonry.h"
 #import "AFNetworking.h"
 #import "YYText.h"
 #import "SDWebImage.h"
-#import "ReactiveObjC.h"
+
+//self
 #import "UIView+Layout.h"
 #import "JRConst.h"
 #import "JRUIButton.h"
+#import "JRUtility.h"
 
 
 #endif /* PrefixHeader_pch */
