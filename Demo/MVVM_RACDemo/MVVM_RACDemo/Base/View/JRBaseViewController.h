@@ -13,12 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JRBaseViewController : UIViewController
 
 /**
- 初始化
- @param title 标题
- */
-- (id)initWithTitle:(NSString *)title;
-
-/**
  创建按钮
  @param title 标题
  @param tag tag

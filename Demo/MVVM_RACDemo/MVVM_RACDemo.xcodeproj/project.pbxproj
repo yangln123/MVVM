@@ -19,6 +19,7 @@
 		85E0D53C229FC71000494796 /* JRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D53B229FC71000494796 /* JRBaseViewController.m */; };
 		85E0D53F229FC7C600494796 /* JRUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D53D229FC7C600494796 /* JRUIButton.m */; };
 		85E0D544229FCAA600494796 /* JRUseRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D543229FCAA600494796 /* JRUseRACViewController.m */; };
+		85E0D556229FDE8600494796 /* JRAppRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D555229FDE8600494796 /* JRAppRACViewController.m */; };
 		A43F1BDD1C4B06479C90E225 /* libPods-MVVM_RACDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8F9763DA6F41F1BC6AC00 /* libPods-MVVM_RACDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		85E0D53E229FC7C600494796 /* JRUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRUIButton.h; sourceTree = "<group>"; };
 		85E0D542229FCAA600494796 /* JRUseRACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRUseRACViewController.h; sourceTree = "<group>"; };
 		85E0D543229FCAA600494796 /* JRUseRACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRUseRACViewController.m; sourceTree = "<group>"; };
+		85E0D554229FDE8600494796 /* JRAppRACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRAppRACViewController.h; sourceTree = "<group>"; };
+		85E0D555229FDE8600494796 /* JRAppRACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRAppRACViewController.m; sourceTree = "<group>"; };
 		AEE8F9763DA6F41F1BC6AC00 /* libPods-MVVM_RACDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVM_RACDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC6A12C9C764A5772A8CD25 /* Pods-MVVM_RACDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_RACDemo.debug.xcconfig"; path = "Target Support Files/Pods-MVVM_RACDemo/Pods-MVVM_RACDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,8 +192,8 @@
 		85E0D537229FC6E300494796 /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
+				85E0D550229FDE4F00494796 /* AppRAC */,
 				85E0D541229FCA6000494796 /* UseRAC */,
-				85E0D540229FCA5D00494796 /* ApplicationRAC */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -212,14 +215,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		85E0D540229FCA5D00494796 /* ApplicationRAC */ = {
-			isa = PBXGroup;
-			children = (
-				85E0D545229FCAAD00494796 /* View */,
-			);
-			path = ApplicationRAC;
-			sourceTree = "<group>";
-		};
 		85E0D541229FCA6000494796 /* UseRAC */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,11 +224,37 @@
 			path = UseRAC;
 			sourceTree = "<group>";
 		};
-		85E0D545229FCAAD00494796 /* View */ = {
+		85E0D550229FDE4F00494796 /* AppRAC */ = {
+			isa = PBXGroup;
+			children = (
+				85E0D553229FDE7100494796 /* Model */,
+				85E0D552229FDE6900494796 /* ViewModel */,
+				85E0D551229FDE6400494796 /* View */,
+			);
+			path = AppRAC;
+			sourceTree = "<group>";
+		};
+		85E0D551229FDE6400494796 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85E0D554229FDE8600494796 /* JRAppRACViewController.h */,
+				85E0D555229FDE8600494796 /* JRAppRACViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		85E0D552229FDE6900494796 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = View;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		85E0D553229FDE7100494796 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +418,7 @@
 				85E0D53F229FC7C600494796 /* JRUIButton.m in Sources */,
 				85E0D53C229FC71000494796 /* JRBaseViewController.m in Sources */,
 				85E0D4FE229FC0B900494796 /* ViewController.m in Sources */,
+				85E0D556229FDE8600494796 /* JRAppRACViewController.m in Sources */,
 				85E0D509229FC0BA00494796 /* main.m in Sources */,
 				85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */,
 			);
