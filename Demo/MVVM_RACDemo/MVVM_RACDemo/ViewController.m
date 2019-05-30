@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "JRBaseViewController.h"
+#import "JRUseRACViewController.h"
+#import "JRAppRACViewController.h"
 
 @interface ViewController ()
 
@@ -50,12 +53,14 @@
 }
 
 - (void)hanleAction:(JRUIButton *)button {
+    JRBaseViewController *controller = nil;
     if (button.tag == 0) {
-        
+        controller = [[JRUseRACViewController alloc] init];
     }
     else if (button.tag == 1) {
-        
+        controller = [[JRAppRACViewController alloc] init];
     }
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
