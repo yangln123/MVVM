@@ -26,12 +26,12 @@
     button.backgroundColor = [UIColor lightGrayColor];
     [button setTitle:title forState:UIControlStateNormal];
     button.tag = tag;
-    [button addTarget:self action:@selector(hanleAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(handleAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return button;
 }
 
-- (void)hanleAction:(UIButton *)button {
+- (void)handleAction:(UIButton *)button {
     
 }
 
