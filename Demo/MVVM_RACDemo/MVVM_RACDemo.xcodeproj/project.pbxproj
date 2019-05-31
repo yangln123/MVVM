@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8507021E22A113AE005BB181 /* JRUIKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507021D22A113AE005BB181 /* JRUIKitViewController.m */; };
+		8507022122A119DD005BB181 /* JRKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507022022A119DD005BB181 /* JRKVOViewController.m */; };
+		8507022722A11FD8005BB181 /* JRNetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507022622A11FD8005BB181 /* JRNetViewController.m */; };
+		8507022A22A11FEE005BB181 /* JRFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507022922A11FEE005BB181 /* JRFoundationViewController.m */; };
+		8507022D22A12124005BB181 /* JREventSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507022C22A12124005BB181 /* JREventSignalViewController.m */; };
 		85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FA229FC0B900494796 /* AppDelegate.m */; };
 		85E0D4FE229FC0B900494796 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FD229FC0B900494796 /* ViewController.m */; };
 		85E0D501229FC0B900494796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E0D4FF229FC0B900494796 /* Main.storyboard */; };
@@ -43,6 +48,16 @@
 
 /* Begin PBXFileReference section */
 		69FC18928FA046653100F657 /* Pods-MVVM_RACDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_RACDemo.release.xcconfig"; path = "Target Support Files/Pods-MVVM_RACDemo/Pods-MVVM_RACDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8507021C22A113AE005BB181 /* JRUIKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRUIKitViewController.h; sourceTree = "<group>"; };
+		8507021D22A113AE005BB181 /* JRUIKitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRUIKitViewController.m; sourceTree = "<group>"; };
+		8507021F22A119DD005BB181 /* JRKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRKVOViewController.h; sourceTree = "<group>"; };
+		8507022022A119DD005BB181 /* JRKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRKVOViewController.m; sourceTree = "<group>"; };
+		8507022522A11FD8005BB181 /* JRNetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRNetViewController.h; sourceTree = "<group>"; };
+		8507022622A11FD8005BB181 /* JRNetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRNetViewController.m; sourceTree = "<group>"; };
+		8507022822A11FEE005BB181 /* JRFoundationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRFoundationViewController.h; sourceTree = "<group>"; };
+		8507022922A11FEE005BB181 /* JRFoundationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRFoundationViewController.m; sourceTree = "<group>"; };
+		8507022B22A12124005BB181 /* JREventSignalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JREventSignalViewController.h; sourceTree = "<group>"; };
+		8507022C22A12124005BB181 /* JREventSignalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JREventSignalViewController.m; sourceTree = "<group>"; };
 		85E0D4F6229FC0B900494796 /* MVVM_RACDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_RACDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E0D4F9229FC0B900494796 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		85E0D4FA229FC0B900494796 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -224,6 +239,16 @@
 			children = (
 				85E0D542229FCAA600494796 /* JRUseRACViewController.h */,
 				85E0D543229FCAA600494796 /* JRUseRACViewController.m */,
+				8507021C22A113AE005BB181 /* JRUIKitViewController.h */,
+				8507021D22A113AE005BB181 /* JRUIKitViewController.m */,
+				8507022822A11FEE005BB181 /* JRFoundationViewController.h */,
+				8507022922A11FEE005BB181 /* JRFoundationViewController.m */,
+				8507021F22A119DD005BB181 /* JRKVOViewController.h */,
+				8507022022A119DD005BB181 /* JRKVOViewController.m */,
+				8507022B22A12124005BB181 /* JREventSignalViewController.h */,
+				8507022C22A12124005BB181 /* JREventSignalViewController.m */,
+				8507022522A11FD8005BB181 /* JRNetViewController.h */,
+				8507022622A11FD8005BB181 /* JRNetViewController.m */,
 			);
 			path = UseRAC;
 			sourceTree = "<group>";
@@ -435,14 +460,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				85E0D544229FCAA600494796 /* JRUseRACViewController.m in Sources */,
+				8507022722A11FD8005BB181 /* JRNetViewController.m in Sources */,
 				85E0D535229FC5AE00494796 /* UIView+Layout.m in Sources */,
+				8507022D22A12124005BB181 /* JREventSignalViewController.m in Sources */,
 				F95AB54F22A028DA0051C572 /* JRUtility.m in Sources */,
+				8507022122A119DD005BB181 /* JRKVOViewController.m in Sources */,
 				85E0D53F229FC7C600494796 /* JRUIButton.m in Sources */,
 				85E0D53C229FC71000494796 /* JRBaseViewController.m in Sources */,
 				85E0D4FE229FC0B900494796 /* ViewController.m in Sources */,
+				8507021E22A113AE005BB181 /* JRUIKitViewController.m in Sources */,
 				85E0D556229FDE8600494796 /* JRAppRACViewController.m in Sources */,
 				85E0D509229FC0BA00494796 /* main.m in Sources */,
 				85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */,
+				8507022A22A11FEE005BB181 /* JRFoundationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
