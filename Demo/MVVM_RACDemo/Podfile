@@ -11,6 +11,8 @@ target 'MVVM_RACDemo' do
     
     pod 'SDWebImage'
     
+    pod 'MBProgressHUD'
+    
     pod 'ReactiveObjC', :git => 'https://github.com/ReactiveCocoa/ReactiveObjC'
     
 end
