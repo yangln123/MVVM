@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, JRSelectorType) {
 
 @interface JRUseRACViewController ()
 
+@property (nonatomic, strong) NSDictionary *actionDict;
 
 @end
 
@@ -35,6 +36,7 @@ typedef NS_ENUM(NSInteger, JRSelectorType) {
     // Do any additional setup after loading the view.
     self.title = @"RAC使用";
     [self addButtons];
+    [self bindAction];
 }
 
 - (void)addButtons {
@@ -45,26 +47,32 @@ typedef NS_ENUM(NSInteger, JRSelectorType) {
     }
 }
 
+- (void)bindAction {
+    self.actionDict = [JRUtility createrSelectersWithKeys:
+     NSStringFromSelector(@selector(racNormalUse)), @(JRSelectorNormalType).stringValue,
+     NSStringFromSelector(@selector(racUIKitUse)), @(JRSelectorUIKitType).stringValue,
+     NSStringFromSelector(@selector(racFoundationUse)),
+     @(JRSelectorFoundationType).stringValue,
+     NSStringFromSelector(@selector(racKVOUse)),
+     @(JRSelectorKVOType).stringValue,
+     NSStringFromSelector(@selector(racSignalUse)), @(JRSelectorEventSignalType).stringValue,
+     NSStringFromSelector(@selector(racNetUse)), @(JRSelectorNetType).stringValue,
+     nil];
+}
+
+- (NSDictionary *)actionDict {
+    if (!_actionDict) {
+        _actionDict = [NSDictionary dictionary];
+    }
+    return _actionDict;
+}
+
 - (void)handleAction:(UIButton *)button {
-    NSInteger tag = button.tag;
-    if (tag == 0) {
-        [self racNormalUse];
-    }
-    else if (tag == 1) {
-        [self racUIKitUse];
-    }
-    else if (tag == 2) {
-        [self racFoundationUse];
-    }
-    else if (tag == 3) {
-        [self racKVOUse];
-    }
-    else if (tag == 4) {
-        [self racSignalUse];
-    }
-    else if (tag == 5) {
-        [self racNetUse];
-    }
+    NSString *selectorString = [self.actionDict objectForKey:@(button.tag).stringValue];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [self performSelector:NSSelectorFromString(selectorString)];
+#pragma clang pop
 }
 
 #pragma mark Normal
