@@ -7,6 +7,7 @@
 //
 
 #import "JRListViewModel.h"
+#import "JRListTableViewCell.h"
 
 @implementation JRListViewModel
 
@@ -27,9 +28,8 @@
 
 - (void)loadData {
     for (int i = 0; i < 10; i ++) {
-        JRListModel *model = [[JRListModel alloc] init];
-        model.title = [NSString stringWithFormat:@"Title--%d", i];
-        model.code = [NSString stringWithFormat:@"Code--%d", i];
+        JRListModel *model = [[JRListModel alloc] initWithText:[NSString stringWithFormat:@"Title--%d", i]];
+        model.viewClass = [JRListTableViewCell class];
         [self.dataArray addObject:model];
     }
     
