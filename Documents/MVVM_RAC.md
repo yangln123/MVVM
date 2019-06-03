@@ -1,10 +1,10 @@
 #iOS MVVM之ReactiveCocoa
 
 ## MVVM简介
-开发中使用较为频繁的设计模式
-![](./MVCPattern.png)
+开发中使用较为频繁的设计模式MVC
+![](./images/MVC_detail.png)
 MVVM设计模式
-![](./MVVMPattern.png)
+![](./images/MVVM_detail.png)
 
 ## ReactiveCocoa简介
 是一个基于函数响应式编程思想（Funcation Reactive Programming，简称FRP）的框架，由几个重要组成部分
@@ -13,8 +13,6 @@ MVVM设计模式
 * 2.订阅者：RACSubscriber，用于订阅和发送数据，是一个协议，由具体的类实现
 * 3.清理者：RACDisposable，用于取消或者清理订阅者的资源
 * 4.RACSubject：可以当成一个信号，也可以充当信号发送者
-
-
 
 
 ## MVVM为什么要结合ReactiveCocoa
@@ -28,6 +26,12 @@ MVVM设计模式
 ## ReactiveCocoa导入
 * 一般不直接使用 pod 'ReactiveCocoa'，会下载安装swift相关的库
 * 安装使用 pod 'ReactiveObjC', :git => 'https://github.com/ReactiveCocoa/ReactiveObjC'
+
+
+## 结论
+* MVM固然古老，在小型项目中非常实用
+* MVVM虽然很强大，有时候会增加一定的代码量
+* 在实际开发中，不拘泥于某种架构，或者将二者结合使用，才是正确的做法
 
 ## Demo
 
