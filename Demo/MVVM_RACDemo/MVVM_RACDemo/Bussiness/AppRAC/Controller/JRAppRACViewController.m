@@ -84,7 +84,6 @@
         _loginBtn = [JRUIButton buttonWithType:UIButtonTypeCustom];
         [_loginBtn setTitle:@"Login" forState:UIControlStateNormal];
         [_loginBtn setTitle:@"Login" forState:UIControlStateHighlighted];
-        [_loginBtn setBackgroundColor:[UIColor lightGrayColor]];
         _loginBtn.userInteractionEnabled = NO;
     }
     return _loginBtn;
@@ -108,6 +107,7 @@
         @strongify(self)
         self.loginBtn.userInteractionEnabled = [x boolValue];
         [self.loginBtn setTitleColor:[x boolValue] ? [UIColor redColor] : [UIColor whiteColor] forState:UIControlStateNormal];
+        [self.loginBtn setBackgroundColor:[x boolValue] ? [UIColor grayColor] : [UIColor lightGrayColor]];
     }] ;
 }
 
