@@ -7,12 +7,12 @@
 //
 
 #import "JRAppRACViewController.h"
-#import "JRListViewModel.h"
 
-@interface JRAppRACViewController ()
+@interface JRAppRACViewController ()<UITextFieldDelegate>
 
-@property (nonatomic, strong) JRListViewModel *listViewModel;
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) UITextField *nameField;
+@property (nonatomic, strong) UITextField *passwordField;
+@property (nonatomic, strong) JRUIButton *loginBtn;
 
 @end
 
@@ -21,25 +21,103 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"RAC应用";
-    [self bindData];
+    self.title = @"Login";
+
+    [self configureSubViews];
+    [self bindRAC];
 }
 
-- (void)bindData {
-    self.listViewModel = [[JRListViewModel alloc] init];
+#pragma mark init
+- (void)configureSubViews {
+    [self.view addSubview:self.nameField];
+    [self.view addSubview:self.passwordField];
+    [self.view addSubview:self.loginBtn];
     
-    @weakify(self);
-    [self.listViewModel.racSubject subscribeNext:^(id  _Nullable x) {
+    [self.nameField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(200.0);
+        make.left.mas_equalTo(36.0);
+        make.width.mas_equalTo(JRScreenWidth - 72.0);
+        make.height.mas_equalTo(48.0);
+    }];
+    [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.height.equalTo(self.nameField);
+        make.top.equalTo(self.nameField.mas_bottom).offset(20.0);
+    }];
+    [self.loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(64.0);
+        make.width.mas_equalTo(JRScreenWidth - 128.0);
+        make.height.equalTo(self.passwordField);
+        make.top.equalTo(self.passwordField.mas_bottom).offset(20.0);
+    }];
+}
+
+- (UITextField *)nameField {
+    if (!_nameField) {
+        _nameField = [self createTextField];
+        _nameField.placeholder = @"请输入用户名";
+    }
+    return _nameField;
+}
+
+- (UITextField *)passwordField {
+    if (!_passwordField) {
+        _passwordField = [self createTextField];
+        _passwordField.placeholder = @"请输入密码";
+        _passwordField.secureTextEntry = YES;
+    }
+    return _passwordField;
+}
+
+- (UITextField *)createTextField {
+    UITextField *field = [[UITextField alloc] init];
+    field.backgroundColor = [UIColor lightGrayColor];
+    field.delegate = self;
+    field.textColor = [UIColor blackColor];
+    field.font = [UIFont systemFontOfSize:18.0];
+    field.textAlignment = NSTextAlignmentLeft;
+    
+    return field;
+}
+
+- (JRUIButton *)loginBtn {
+    if (!_loginBtn) {
+        _loginBtn = [JRUIButton buttonWithType:UIButtonTypeCustom];
+        [_loginBtn setTitle:@"Login" forState:UIControlStateNormal];
+        [_loginBtn setTitle:@"Login" forState:UIControlStateHighlighted];
+        [_loginBtn setBackgroundColor:[UIColor lightGrayColor]];
+        _loginBtn.userInteractionEnabled = NO;
+    }
+    return _loginBtn;
+}
+
+#pragma mark bind
+- (void)bindRAC {
+    @weakify(self)
+    RACSignal *nameSignal = [self.nameField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
         @strongify(self);
-        if ([x isKindOfClass:[NSArray class]]) {
-            self.dataSource = x;
-        }
-        //加载数据
+        return @([self isValid:value]);
+    }];
+    RACSignal *passwordSignal = [self.passwordField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+        @strongify(self)
+        return @([self isValid: value]);
     }];
     
-    [self.listViewModel loadData];
+    [[RACSignal combineLatest:@[nameSignal, passwordSignal] reduce:^(id first, id second){
+        return @([first boolValue] && [second boolValue]);
+    }] subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        self.loginBtn.userInteractionEnabled = [x boolValue];
+        [self.loginBtn setTitleColor:[x boolValue] ? [UIColor redColor] : [UIColor whiteColor] forState:UIControlStateNormal];
+    }] ;
 }
 
+- (BOOL)isValid:(NSString *)str {
+    NSString *regularStr = @"[a-zA-Z0-9_]{6,16}";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", regularStr];
+    return [predicate evaluateWithObject:str];
+}
+
+#pragma mark textField delegate
 
 
 @end

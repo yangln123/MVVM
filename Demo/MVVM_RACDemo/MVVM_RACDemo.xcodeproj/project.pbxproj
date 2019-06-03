@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		8507022D22A12124005BB181 /* JREventSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507022C22A12124005BB181 /* JREventSignalViewController.m */; };
 		8564F85B22A51B4500E2E3CC /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 8564F85A22A51B4500E2E3CC /* city.json */; };
 		8564F86122A51D5E00E2E3CC /* JRListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F86022A51D5E00E2E3CC /* JRListViewModel.m */; };
-		8564F86422A51D8900E2E3CC /* JRListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F86322A51D8900E2E3CC /* JRListModel.m */; };
 		8564F87922A522E900E2E3CC /* QRCRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F86B22A522E900E2E3CC /* QRCRefreshAutoNormalFooter.m */; };
 		8564F87A22A522E900E2E3CC /* QRCRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F86C22A522E900E2E3CC /* QRCRefreshGifHeader.m */; };
 		8564F87B22A522E900E2E3CC /* QRCRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F86D22A522E900E2E3CC /* QRCRefreshNormalHeader.m */; };
@@ -23,6 +22,10 @@
 		8564F87E22A522E900E2E3CC /* QRCTableBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F87222A522E900E2E3CC /* QRCTableBaseCellModel.m */; };
 		8564F87F22A522E900E2E3CC /* QRCTableBaseHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F87322A522E900E2E3CC /* QRCTableBaseHeaderFooterView.m */; };
 		8564F88022A522E900E2E3CC /* QRCTableBaseSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F87422A522E900E2E3CC /* QRCTableBaseSectionModel.m */; };
+		8564F88322A5252F00E2E3CC /* JRListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F88222A5252F00E2E3CC /* JRListTableViewCell.m */; };
+		8564F88622A5258E00E2E3CC /* JRListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F88522A5258E00E2E3CC /* JRListModel.m */; };
+		8564F88922A52ADD00E2E3CC /* JRLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F88822A52ADD00E2E3CC /* JRLoginView.m */; };
+		8564F88C22A52BDB00E2E3CC /* JRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F88B22A52BDB00E2E3CC /* JRListViewController.m */; };
 		85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FA229FC0B900494796 /* AppDelegate.m */; };
 		85E0D4FE229FC0B900494796 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FD229FC0B900494796 /* ViewController.m */; };
 		85E0D501229FC0B900494796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E0D4FF229FC0B900494796 /* Main.storyboard */; };
@@ -72,8 +75,6 @@
 		8564F85A22A51B4500E2E3CC /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		8564F85F22A51D5E00E2E3CC /* JRListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRListViewModel.h; sourceTree = "<group>"; };
 		8564F86022A51D5E00E2E3CC /* JRListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRListViewModel.m; sourceTree = "<group>"; };
-		8564F86222A51D8900E2E3CC /* JRListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRListModel.h; sourceTree = "<group>"; };
-		8564F86322A51D8900E2E3CC /* JRListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRListModel.m; sourceTree = "<group>"; };
 		8564F86822A522E900E2E3CC /* QRCRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
 		8564F86922A522E900E2E3CC /* QRCRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCRefreshGifHeader.h; sourceTree = "<group>"; };
 		8564F86A22A522E900E2E3CC /* QRCRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCRefreshNormalHeader.h; sourceTree = "<group>"; };
@@ -90,6 +91,14 @@
 		8564F87622A522E900E2E3CC /* QRCTableBaseCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCTableBaseCellModel.h; sourceTree = "<group>"; };
 		8564F87722A522E900E2E3CC /* QRCTableBaseSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCTableBaseSectionModel.h; sourceTree = "<group>"; };
 		8564F87822A522E900E2E3CC /* QRCTableBaseHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCTableBaseHeaderFooterView.h; sourceTree = "<group>"; };
+		8564F88122A5252F00E2E3CC /* JRListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JRListTableViewCell.h; path = MVVM_RACDemo/Base/TableView/JRListTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		8564F88222A5252F00E2E3CC /* JRListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JRListTableViewCell.m; path = MVVM_RACDemo/Base/TableView/JRListTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		8564F88422A5258E00E2E3CC /* JRListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRListModel.h; sourceTree = "<group>"; };
+		8564F88522A5258E00E2E3CC /* JRListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRListModel.m; sourceTree = "<group>"; };
+		8564F88722A52ADD00E2E3CC /* JRLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JRLoginView.h; path = MVVM_RACDemo/Bussiness/AppRAC/Model/JRLoginView.h; sourceTree = SOURCE_ROOT; };
+		8564F88822A52ADD00E2E3CC /* JRLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JRLoginView.m; path = MVVM_RACDemo/Bussiness/AppRAC/Model/JRLoginView.m; sourceTree = SOURCE_ROOT; };
+		8564F88A22A52BDB00E2E3CC /* JRListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRListViewController.h; sourceTree = "<group>"; };
+		8564F88B22A52BDB00E2E3CC /* JRListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRListViewController.m; sourceTree = "<group>"; };
 		85E0D4F6229FC0B900494796 /* MVVM_RACDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_RACDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E0D4F9229FC0B900494796 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		85E0D4FA229FC0B900494796 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -180,6 +189,8 @@
 			children = (
 				85E0D554229FDE8600494796 /* JRAppRACViewController.h */,
 				85E0D555229FDE8600494796 /* JRAppRACViewController.m */,
+				8564F88A22A52BDB00E2E3CC /* JRListViewController.h */,
+				8564F88B22A52BDB00E2E3CC /* JRListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,8 +198,8 @@
 		8564F85D22A51B9A00E2E3CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8564F86222A51D8900E2E3CC /* JRListModel.h */,
-				8564F86322A51D8900E2E3CC /* JRListModel.m */,
+				8564F88422A5258E00E2E3CC /* JRListModel.h */,
+				8564F88522A5258E00E2E3CC /* JRListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +386,10 @@
 		85E0D551229FDE6400494796 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8564F88122A5252F00E2E3CC /* JRListTableViewCell.h */,
+				8564F88222A5252F00E2E3CC /* JRListTableViewCell.m */,
+				8564F88722A52ADD00E2E3CC /* JRLoginView.h */,
+				8564F88822A52ADD00E2E3CC /* JRLoginView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -553,14 +568,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8564F88922A52ADD00E2E3CC /* JRLoginView.m in Sources */,
 				8564F87C22A522E900E2E3CC /* QRCTableViewManager.m in Sources */,
 				85E0D544229FCAA600494796 /* JRUseRACViewController.m in Sources */,
 				8564F87922A522E900E2E3CC /* QRCRefreshAutoNormalFooter.m in Sources */,
-				8564F86422A51D8900E2E3CC /* JRListModel.m in Sources */,
 				8564F88022A522E900E2E3CC /* QRCTableBaseSectionModel.m in Sources */,
 				8564F87E22A522E900E2E3CC /* QRCTableBaseCellModel.m in Sources */,
 				8507022722A11FD8005BB181 /* JRNetViewController.m in Sources */,
 				85E0D535229FC5AE00494796 /* UIView+Layout.m in Sources */,
+				8564F88622A5258E00E2E3CC /* JRListModel.m in Sources */,
 				8507022D22A12124005BB181 /* JREventSignalViewController.m in Sources */,
 				F95AB54F22A028DA0051C572 /* JRUtility.m in Sources */,
 				8507022122A119DD005BB181 /* JRKVOViewController.m in Sources */,
@@ -569,6 +585,7 @@
 				8564F86122A51D5E00E2E3CC /* JRListViewModel.m in Sources */,
 				85E0D53C229FC71000494796 /* JRBaseViewController.m in Sources */,
 				85E0D4FE229FC0B900494796 /* ViewController.m in Sources */,
+				8564F88322A5252F00E2E3CC /* JRListTableViewCell.m in Sources */,
 				8564F87B22A522E900E2E3CC /* QRCRefreshNormalHeader.m in Sources */,
 				8564F87A22A522E900E2E3CC /* QRCRefreshGifHeader.m in Sources */,
 				8564F87F22A522E900E2E3CC /* QRCTableBaseHeaderFooterView.m in Sources */,
@@ -577,6 +594,7 @@
 				85E0D509229FC0BA00494796 /* main.m in Sources */,
 				85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */,
 				8507022A22A11FEE005BB181 /* JRFoundationViewController.m in Sources */,
+				8564F88C22A52BDB00E2E3CC /* JRListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

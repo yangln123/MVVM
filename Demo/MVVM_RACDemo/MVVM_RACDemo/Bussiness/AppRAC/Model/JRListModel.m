@@ -10,4 +10,12 @@
 
 @implementation JRListModel
 
+- (id)initWithText:(NSString *)text {
+    self = [super initWithText:text];
+    if (self) {
+        self.text = text;
+    }
+    return self;
+}
+
 @end
