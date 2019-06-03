@@ -13,6 +13,8 @@ target 'MVVM_RACDemo' do
     
     pod 'MBProgressHUD'
     
+    pod 'MJRefresh'
+    
     pod 'ReactiveObjC', :git => 'https://github.com/ReactiveCocoa/ReactiveObjC'
     
 end
