@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) RACCommand *netCommand;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) RACCommand *command;
 
 @end
 
@@ -23,19 +24,40 @@
     
     [self.view addSubview:self.imageView];
     
-//    [[[self.netCommand executionSignals] switchToLatest] subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"%@", x);
-//    }];
-    
-    [self.netCommand execute:nil];
-    [[self.netCommand executionSignals] subscribeNext:^(id  _Nullable x) {
+    [[self.netCommand executionSignals].switchToLatest subscribeNext:^(id  _Nullable x) {
         NSLog(@"%@", x);
         if ([x isKindOfClass:[UIImage class]]) {
             UIImage *image = (UIImage *)x;
-            self.imageView.image = x;
+            self.imageView.image = image;
             self.imageView.size = image.size;
         }
     }];
+    [self.netCommand execute:@"send begin"];
+    
+    
+//    [self.netCommand.executionSignals subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"yln==%@", x);
+//        [x subscribeNext:^(id  _Nullable x) {
+//            if ([x isKindOfClass:[UIImage class]]) {
+//                UIImage *image = (UIImage *)x;
+//                self.imageView.image = image;
+//                self.imageView.size = image.size;
+//            }
+//        }];
+//    }];
+//    [self.netCommand execute:@"send begin"];
+    
+    
+//    RACSignal *signal = [self.netCommand execute:@"send begin"];
+//    [signal subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@", x);
+//        if ([x isKindOfClass:[UIImage class]]) {
+//            UIImage *image = (UIImage *)x;
+//            self.imageView.image = image;
+//            self.imageView.size = image.size;
+//        }
+//    }];
+    
 }
 
 - (RACCommand *)netCommand {
@@ -59,6 +81,7 @@
                     else {
                         [subscriber sendError:error];
                     }
+                    [subscriber sendCompleted];//必须，否则不能再次发送
                 }];
                 return nil;
             }];
@@ -73,5 +96,21 @@
     }
     return _imageView;
 }
+
+
+//-(RACCommand*)command{
+//    if(!_command){
+//        _command= [[RACCommand alloc]initWithSignalBlock:^RACSignal*(id input) {
+//            NSLog(@"收到执行命令%@",input);
+//            return[RACSignal createSignal:^RACDisposable*(id subscriber) {
+//                NSLog(@"正在加载.........");
+//                [subscriber sendNext:@"数据"];
+//                [subscriber sendCompleted];
+//                return nil;
+//            }];
+//        }];
+//    }
+//    return _command;
+//}
 
 @end
