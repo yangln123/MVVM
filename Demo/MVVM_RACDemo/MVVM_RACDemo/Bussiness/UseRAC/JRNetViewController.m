@@ -64,7 +64,7 @@
     if (!_netCommand) {
         _netCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-//                [JRUtility sendGetRequestWithUrl:@"https://img2.vipcn.com/img2017/6/30/2017063009549889.jpg" params:@{} finish:^(id  _Nonnull data, NSError * _Nonnull error) {
+//                [JRNetWork sendGetRequestWithUrl:@"https://img2.vipcn.com/img2017/6/30/2017063009549889.jpg" params:@{} finish:^(id  _Nonnull data, NSError * _Nonnull error) {
 //                    if (!error) {
 //                        [subscriber sendNext:data];
 //                    }

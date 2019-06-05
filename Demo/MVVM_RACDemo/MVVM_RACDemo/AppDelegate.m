@@ -25,6 +25,8 @@
     self.window.rootViewController = navController;
     [self.window makeKeyWindow];
     
+    [JRUtility sharedInstance].navigationController = navController;
+    
     return YES;
 }
 
