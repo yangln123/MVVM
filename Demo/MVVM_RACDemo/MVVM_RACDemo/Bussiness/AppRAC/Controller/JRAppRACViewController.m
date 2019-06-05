@@ -7,12 +7,14 @@
 //
 
 #import "JRAppRACViewController.h"
+#import "JRLoginViewModel.h"
 
-@interface JRAppRACViewController ()<UITextFieldDelegate>
+@interface JRAppRACViewController ()
 
 @property (nonatomic, strong) UITextField *nameField;
 @property (nonatomic, strong) UITextField *passwordField;
 @property (nonatomic, strong) JRUIButton *loginBtn;
+@property (nonatomic, strong) JRLoginViewModel *loginViewModel;
 
 @end
 
@@ -71,13 +73,30 @@
 - (UITextField *)createTextField {
     UITextField *field = [[UITextField alloc] init];
     field.backgroundColor = [UIColor lightGrayColor];
-    field.delegate = self;
     field.textColor = [UIColor blackColor];
     field.font = [UIFont systemFontOfSize:18.0];
     field.textAlignment = NSTextAlignmentLeft;
+    field.maxLength = 10;
+    @weakify(self)
+    [field setMaxAction:^{
+        @strongify(self)
+        [self handleHud];
+    }];
     
     return field;
 }
+
+- (void)handleHud {
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:hud];
+    hud.label.text = @"超过最大可输入长度";
+    hud.mode = MBProgressHUDModeText;
+    [hud showAnimated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [hud hideAnimated:YES];
+    });
+}
+
 
 - (JRUIButton *)loginBtn {
     if (!_loginBtn) {
@@ -85,39 +104,20 @@
         [_loginBtn setTitle:@"Login" forState:UIControlStateNormal];
         [_loginBtn setTitle:@"Login" forState:UIControlStateHighlighted];
         _loginBtn.userInteractionEnabled = NO;
+        [_loginBtn addTarget:self action:@selector(loginSuccess:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _loginBtn;
 }
 
+- (void)loginSuccess:(id)sender {
+    [self.loginViewModel.racCommand execute:@"login"];
+}
+
 #pragma mark bind
 - (void)bindRAC {
-    @weakify(self)
-    RACSignal *nameSignal = [self.nameField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-        @strongify(self);
-        return @([self isValid:value]);
-    }];
-    RACSignal *passwordSignal = [self.passwordField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-        @strongify(self)
-        return @([self isValid: value]);
-    }];
-    
-    [[RACSignal combineLatest:@[nameSignal, passwordSignal] reduce:^(id first, id second){
-        return @([first boolValue] && [second boolValue]);
-    }] subscribeNext:^(id  _Nullable x) {
-        @strongify(self)
-        self.loginBtn.userInteractionEnabled = [x boolValue];
-        [self.loginBtn setTitleColor:[x boolValue] ? [UIColor redColor] : [UIColor whiteColor] forState:UIControlStateNormal];
-        [self.loginBtn setBackgroundColor:[x boolValue] ? [UIColor grayColor] : [UIColor lightGrayColor]];
-    }] ;
+    self.loginViewModel = [[JRLoginViewModel alloc] initWithNameField:self.nameField passwordField:self.passwordField loginBtn:self.loginBtn];
 }
 
-- (BOOL)isValid:(NSString *)str {
-    NSString *regularStr = @"[a-zA-Z0-9_]{6,16}";
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", regularStr];
-    return [predicate evaluateWithObject:str];
-}
-
-#pragma mark textField delegate
 
 
 @end

@@ -10,6 +10,15 @@
 
 @implementation JRUtility
 
++ (instancetype)sharedInstance {
+    static JRUtility *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[JRUtility alloc] init];
+    });
+    return instance;
+}
+
 + (NSDictionary *)createrSelectersWithKeys:(id)firstSelector, ... {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:0];
     va_list args;
@@ -24,38 +33,5 @@
     return dict;
 }
 
-+ (void)sendGetRequestWithUrl:(NSString *)url params:(NSDictionary *)params finish:(void(^)(id data, NSError *error))finish {
-    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
-    securityPolicy.validatesDomainName = NO;
-    securityPolicy.allowInvalidCertificates = YES;
-    
-    [AFHTTPSessionManager manager].securityPolicy = securityPolicy;
-    
-    [[AFHTTPSessionManager manager] GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (finish) {
-            finish(responseObject, nil);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (finish) {
-            finish(nil, error);
-        }
-    }];
-}
-
-+ (void)sendPostRequestWithUrl:(NSString *)url params:(NSDictionary *)params finish:(void(^)(id data, NSError *error))finish {
-    [[AFHTTPSessionManager manager] POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (finish) {
-            finish(responseObject, nil);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (finish) {
-            finish(nil, error);
-        }
-    }];
-}
 
 @end

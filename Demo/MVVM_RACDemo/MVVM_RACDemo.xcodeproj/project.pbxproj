@@ -26,6 +26,10 @@
 		8564F88622A5258E00E2E3CC /* JRListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F88522A5258E00E2E3CC /* JRListModel.m */; };
 		8564F88922A52ADD00E2E3CC /* JRLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F88822A52ADD00E2E3CC /* JRLoginView.m */; };
 		8564F88C22A52BDB00E2E3CC /* JRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564F88B22A52BDB00E2E3CC /* JRListViewController.m */; };
+		85BC281322A7A40500E461D8 /* UITextField+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC281222A7A40500E461D8 /* UITextField+Extention.m */; };
+		85BC281622A7B2FF00E461D8 /* JRLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC281522A7B2FF00E461D8 /* JRLoginViewModel.m */; };
+		85BC281922A7B39000E461D8 /* JRUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC281822A7B39000E461D8 /* JRUserModel.m */; };
+		85BC281C22A7C07700E461D8 /* JRNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC281B22A7C07700E461D8 /* JRNetWork.m */; };
 		85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FA229FC0B900494796 /* AppDelegate.m */; };
 		85E0D4FE229FC0B900494796 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FD229FC0B900494796 /* ViewController.m */; };
 		85E0D501229FC0B900494796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E0D4FF229FC0B900494796 /* Main.storyboard */; };
@@ -99,6 +103,14 @@
 		8564F88822A52ADD00E2E3CC /* JRLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JRLoginView.m; path = MVVM_RACDemo/Bussiness/AppRAC/Model/JRLoginView.m; sourceTree = SOURCE_ROOT; };
 		8564F88A22A52BDB00E2E3CC /* JRListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRListViewController.h; sourceTree = "<group>"; };
 		8564F88B22A52BDB00E2E3CC /* JRListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRListViewController.m; sourceTree = "<group>"; };
+		85BC281122A7A40500E461D8 /* UITextField+Extention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extention.h"; sourceTree = "<group>"; };
+		85BC281222A7A40500E461D8 /* UITextField+Extention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extention.m"; sourceTree = "<group>"; };
+		85BC281422A7B2FF00E461D8 /* JRLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRLoginViewModel.h; sourceTree = "<group>"; };
+		85BC281522A7B2FF00E461D8 /* JRLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRLoginViewModel.m; sourceTree = "<group>"; };
+		85BC281722A7B39000E461D8 /* JRUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRUserModel.h; sourceTree = "<group>"; };
+		85BC281822A7B39000E461D8 /* JRUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRUserModel.m; sourceTree = "<group>"; };
+		85BC281A22A7C07700E461D8 /* JRNetWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRNetWork.h; sourceTree = "<group>"; };
+		85BC281B22A7C07700E461D8 /* JRNetWork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRNetWork.m; sourceTree = "<group>"; };
 		85E0D4F6229FC0B900494796 /* MVVM_RACDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_RACDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E0D4F9229FC0B900494796 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		85E0D4FA229FC0B900494796 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -200,6 +212,8 @@
 			children = (
 				8564F88422A5258E00E2E3CC /* JRListModel.h */,
 				8564F88522A5258E00E2E3CC /* JRListModel.m */,
+				85BC281722A7B39000E461D8 /* JRUserModel.h */,
+				85BC281822A7B39000E461D8 /* JRUserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +223,8 @@
 			children = (
 				8564F85F22A51D5E00E2E3CC /* JRListViewModel.h */,
 				8564F86022A51D5E00E2E3CC /* JRListViewModel.m */,
+				85BC281422A7B2FF00E461D8 /* JRLoginViewModel.h */,
+				85BC281522A7B2FF00E461D8 /* JRLoginViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -322,6 +338,8 @@
 				85E0D53D229FC7C600494796 /* JRUIButton.m */,
 				85E0D533229FC5AE00494796 /* UIView+Layout.h */,
 				85E0D534229FC5AE00494796 /* UIView+Layout.m */,
+				85BC281122A7A40500E461D8 /* UITextField+Extention.h */,
+				85BC281222A7A40500E461D8 /* UITextField+Extention.m */,
 			);
 			path = Extends;
 			sourceTree = "<group>";
@@ -407,6 +425,8 @@
 			children = (
 				F95AB54D22A028DA0051C572 /* JRUtility.h */,
 				F95AB54E22A028DA0051C572 /* JRUtility.m */,
+				85BC281A22A7C07700E461D8 /* JRNetWork.h */,
+				85BC281B22A7C07700E461D8 /* JRNetWork.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -572,10 +592,12 @@
 				8564F87C22A522E900E2E3CC /* QRCTableViewManager.m in Sources */,
 				85E0D544229FCAA600494796 /* JRUseRACViewController.m in Sources */,
 				8564F87922A522E900E2E3CC /* QRCRefreshAutoNormalFooter.m in Sources */,
+				85BC281922A7B39000E461D8 /* JRUserModel.m in Sources */,
 				8564F88022A522E900E2E3CC /* QRCTableBaseSectionModel.m in Sources */,
 				8564F87E22A522E900E2E3CC /* QRCTableBaseCellModel.m in Sources */,
 				8507022722A11FD8005BB181 /* JRNetViewController.m in Sources */,
 				85E0D535229FC5AE00494796 /* UIView+Layout.m in Sources */,
+				85BC281C22A7C07700E461D8 /* JRNetWork.m in Sources */,
 				8564F88622A5258E00E2E3CC /* JRListModel.m in Sources */,
 				8507022D22A12124005BB181 /* JREventSignalViewController.m in Sources */,
 				F95AB54F22A028DA0051C572 /* JRUtility.m in Sources */,
@@ -588,12 +610,14 @@
 				8564F88322A5252F00E2E3CC /* JRListTableViewCell.m in Sources */,
 				8564F87B22A522E900E2E3CC /* QRCRefreshNormalHeader.m in Sources */,
 				8564F87A22A522E900E2E3CC /* QRCRefreshGifHeader.m in Sources */,
+				85BC281622A7B2FF00E461D8 /* JRLoginViewModel.m in Sources */,
 				8564F87F22A522E900E2E3CC /* QRCTableBaseHeaderFooterView.m in Sources */,
 				8507021E22A113AE005BB181 /* JRUIKitViewController.m in Sources */,
 				85E0D556229FDE8600494796 /* JRAppRACViewController.m in Sources */,
 				85E0D509229FC0BA00494796 /* main.m in Sources */,
 				85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */,
 				8507022A22A11FEE005BB181 /* JRFoundationViewController.m in Sources */,
+				85BC281322A7A40500E461D8 /* UITextField+Extention.m in Sources */,
 				8564F88C22A52BDB00E2E3CC /* JRListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
