@@ -7,6 +7,7 @@
 //
 
 #import "JRAppRACViewController.h"
+#import "JRListViewController.h"
 #import "JRLoginViewModel.h"
 
 @interface JRAppRACViewController ()
@@ -115,9 +116,24 @@
 
 #pragma mark bind
 - (void)bindRAC {
-    self.loginViewModel = [[JRLoginViewModel alloc] initWithNameField:self.nameField passwordField:self.passwordField loginBtn:self.loginBtn];
+    self.loginViewModel = [[JRLoginViewModel alloc] init];
+    RAC(self.loginViewModel, userName) = self.nameField.rac_textSignal;
+    RAC(self.loginViewModel, password) = self.passwordField.rac_textSignal;
+    
+    @weakify(self)
+    [self.loginViewModel handleSignalWithComplete:^(BOOL enable) {
+        @strongify(self)
+        self.loginBtn.userInteractionEnabled = enable;
+        [self.loginBtn setTitleColor:enable ? [UIColor redColor] : [UIColor whiteColor] forState:UIControlStateNormal];
+        [self.loginBtn setBackgroundColor:enable ? [UIColor grayColor] : [UIColor lightGrayColor]];
+    }];
+    
+    [self.loginViewModel.successSubject subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        JRListViewController *vc = [[JRListViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
-
 
 
 @end

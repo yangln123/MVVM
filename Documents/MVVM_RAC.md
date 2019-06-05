@@ -3,21 +3,20 @@
 ## MVVM简介
 开发中使用较为频繁的设计模式MVC
 ![](./images/MVC_detail.png)
+
 MVVM设计模式
 ![](./images/MVVM_detail.png)
 
 ## ReactiveCocoa简介
 是一个基于函数响应式编程思想（Funcation Reactive Programming，简称FRP）的框架，由几个重要组成部分
 
-* 1.信号：RACSignal,可以被订阅，订阅后可以进行逻辑处理或者数据传递
+* 1.信号：RACSignal，可以被订阅，订阅后可以进行逻辑处理或者数据传递
 * 2.订阅者：RACSubscriber，用于订阅和发送数据，是一个协议，由具体的类实现
 * 3.清理者：RACDisposable，用于取消或者清理订阅者的资源
 * 4.RACSubject：可以当成一个信号，也可以充当信号发送者
 
 
 ## MVVM为什么要结合ReactiveCocoa
-
-
 
 结合RAC的MVVM设计模式
 ![](./MVVMReactiveCocoa.png)
@@ -47,4 +46,6 @@ https://www.jianshu.com/p/763278ee047f
 https://www.jianshu.com/p/35a28cf0a22f
 
 https://www.jianshu.com/p/14075b5ec5ff
+
+https://github.com/lizelu/MVVMWithReactiveCocoa
 

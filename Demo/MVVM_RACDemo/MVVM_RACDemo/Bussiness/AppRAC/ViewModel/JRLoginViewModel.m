@@ -7,40 +7,26 @@
 //
 
 #import "JRLoginViewModel.h"
-#import "JRListViewController.h"
+
+@interface JRLoginViewModel ()
+
+@property (nonatomic, strong) RACSignal *userSignal;
+@property (nonatomic, strong) RACSignal *passwordSignal;
+@property (nonatomic, strong) RACSignal *loginSignal;
+
+@end
 
 @implementation JRLoginViewModel
 
-- (id)initWithNameField:(UITextField *)nameField passwordField:(UITextField *)passwordField loginBtn:(JRUIButton *)loginBtn {
+- (id)init {
     self = [super init];
     if (self) {
-        @weakify(self)
-        RACSignal *nameSignal = [nameField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-            @strongify(self);
-            return @([self isValid:value]);
-        }];
-        RACSignal *passwordSignal = [passwordField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-            @strongify(self)
-            return @([self isValid: value]);
-        }];
-        
-        [[RACSignal combineLatest:@[nameSignal, passwordSignal] reduce:^(id first, id second){
-            return @([first boolValue] && [second boolValue]);
-        }] subscribeNext:^(id  _Nullable x) {
-            loginBtn.userInteractionEnabled = [x boolValue];
-            [loginBtn setTitleColor:[x boolValue] ? [UIColor redColor] : [UIColor whiteColor] forState:UIControlStateNormal];
-            [loginBtn setBackgroundColor:[x boolValue] ? [UIColor grayColor] : [UIColor lightGrayColor]];
-        }];
-        
+        self.userSignal = RACObserve(self, self.userName);
+        self.passwordSignal = RACObserve(self, self.password);
+        self.successSubject = [RACSubject subject];
         [self handleCommand];
     }
     return self;
-}
-
-- (BOOL)isValid:(NSString *)str {
-    NSString *regularStr = @"[a-zA-Z0-9_]{6,10}";
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", regularStr];
-    return [predicate evaluateWithObject:str];
 }
 
 - (RACCommand *)racCommand {
@@ -48,7 +34,7 @@
         _racCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                 [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:NO];
                     [subscriber sendNext:@"data"];
                     [subscriber sendCompleted];//必须，否则不能再次发送
@@ -60,11 +46,30 @@
     return _racCommand;
 }
 
-- (void)handleCommand {
-    [[[self.racCommand executionSignals] switchToLatest] subscribeNext:^(id  _Nullable x) {
-        JRListViewController *vc = [[JRListViewController alloc] init];
-        [[JRUtility sharedInstance].navigationController pushViewController:vc animated:YES];
+- (void)handleSignalWithComplete:(void(^)(BOOL enable))complete {
+    @weakify(self)
+    [[RACSignal combineLatest:@[self.userSignal, self.passwordSignal] reduce:^(NSString *userName, NSString *password){
+        @strongify(self)
+        return @([self isValid:userName] && [self isValid:password]);
+    }] subscribeNext:^(id  _Nullable x) {
+        if (complete) {
+            complete([x boolValue]);
+        }
     }];
+}
+
+- (void)handleCommand {
+    @weakify(self)
+    [[[self.racCommand executionSignals] switchToLatest] subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        [self.successSubject sendNext:x];
+    }];
+}
+
+- (BOOL)isValid:(NSString *)str {
+    NSString *regularStr = @"[a-zA-Z0-9_]{6,10}";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", regularStr];
+    return [predicate evaluateWithObject:str];
 }
 
 @end

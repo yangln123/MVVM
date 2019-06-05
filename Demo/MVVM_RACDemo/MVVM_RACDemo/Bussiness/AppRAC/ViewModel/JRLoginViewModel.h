@@ -16,8 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) JRUserModel *userModel;
 @property (nonatomic, strong) RACCommand *racCommand;
 
-- (id)initWithNameField:(UITextField *)nameField passwordField:(UITextField *)passwordField loginBtn:(JRUIButton *)loginBtn;
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) RACSubject *successSubject;
 
+- (void)handleSignalWithComplete:(void(^)(BOOL enable))complete;
 
 @end
 
