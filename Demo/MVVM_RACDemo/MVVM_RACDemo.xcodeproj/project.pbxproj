@@ -30,6 +30,7 @@
 		85BC281C22A7C07700E461D8 /* JRNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC281B22A7C07700E461D8 /* JRNetWork.m */; };
 		85BC282722A7CF2500E461D8 /* JRLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC282422A7CF2500E461D8 /* JRLoginView.m */; };
 		85BC282822A7CF2500E461D8 /* JRListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC282522A7CF2500E461D8 /* JRListTableViewCell.m */; };
+		85C95E3B22A912230015EA65 /* UIGestureRecognizer+Associator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C95E3A22A912230015EA65 /* UIGestureRecognizer+Associator.m */; };
 		85E0D4FB229FC0B900494796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FA229FC0B900494796 /* AppDelegate.m */; };
 		85E0D4FE229FC0B900494796 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E0D4FD229FC0B900494796 /* ViewController.m */; };
 		85E0D501229FC0B900494796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E0D4FF229FC0B900494796 /* Main.storyboard */; };
@@ -111,6 +112,8 @@
 		85BC282422A7CF2500E461D8 /* JRLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRLoginView.m; sourceTree = "<group>"; };
 		85BC282522A7CF2500E461D8 /* JRListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRListTableViewCell.m; sourceTree = "<group>"; };
 		85BC282622A7CF2500E461D8 /* JRLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRLoginView.h; sourceTree = "<group>"; };
+		85C95E3922A912230015EA65 /* UIGestureRecognizer+Associator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Associator.h"; sourceTree = "<group>"; };
+		85C95E3A22A912230015EA65 /* UIGestureRecognizer+Associator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Associator.m"; sourceTree = "<group>"; };
 		85E0D4F6229FC0B900494796 /* MVVM_RACDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_RACDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E0D4F9229FC0B900494796 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		85E0D4FA229FC0B900494796 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				85E0D534229FC5AE00494796 /* UIView+Layout.m */,
 				85BC281122A7A40500E461D8 /* UITextField+Extention.h */,
 				85BC281222A7A40500E461D8 /* UITextField+Extention.m */,
+				85C95E3922A912230015EA65 /* UIGestureRecognizer+Associator.h */,
+				85C95E3A22A912230015EA65 /* UIGestureRecognizer+Associator.m */,
 			);
 			path = Extends;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				85BC281922A7B39000E461D8 /* JRUserModel.m in Sources */,
 				8564F88022A522E900E2E3CC /* QRCTableBaseSectionModel.m in Sources */,
 				8564F87E22A522E900E2E3CC /* QRCTableBaseCellModel.m in Sources */,
+				85C95E3B22A912230015EA65 /* UIGestureRecognizer+Associator.m in Sources */,
 				8507022722A11FD8005BB181 /* JRNetViewController.m in Sources */,
 				85E0D535229FC5AE00494796 /* UIView+Layout.m in Sources */,
 				85BC281C22A7C07700E461D8 /* JRNetWork.m in Sources */,
@@ -809,6 +815,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJN37M6PS7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MVVM_RACDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = MVVM_RACDemo/Info.plist;
@@ -816,7 +823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yangln.MVVM-RACDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.58.carfinancialBBB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -828,6 +835,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJN37M6PS7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MVVM_RACDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = MVVM_RACDemo/Info.plist;
@@ -835,7 +843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yangln.MVVM-RACDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.58.carfinancialBBB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

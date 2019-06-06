@@ -25,7 +25,14 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.useButton];
     [self.view addSubview:self.appButton];
+    
+//    UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
+    //    [self handleTap];//修改为handleTap:则不会crash ？？？？？？
 }
+
+//- (void)handleTap {
+//    NSLog(@"yangln");
+//}
 
 - (JRUIButton *)useButton {
     if (!_useButton) {
