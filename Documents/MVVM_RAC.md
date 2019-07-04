@@ -9,7 +9,7 @@ MVVM设计模式
 
 
 ## ReactiveCocoa(简称RAC)简介
-是一个基于函数响应式编程思想（Funcation Reactive Programming，简称FRP）的框架
+RAC提供了一个单一的、统一的方法去处理异步的行为，包括delegate方法、blocks回调、target-action机制、notifications和KVO，是一个基于函数响应式编程思想（Funcation Reactive Programming，简称FRP）的框架
 ![](./images/functionCode.png)   
 
 
